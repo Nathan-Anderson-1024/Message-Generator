@@ -34,6 +34,9 @@ const getUserQuestion = () => {
         answerMemory.push(answerArray[randomNum]);
         return alert(answerArray[randomNum]);
     };
+    if (userInput === '' || userInput.length < 5) {
+        return alert('Please ask a question.')
+    }
     //if question hasnt been asked then return an answer and push the question into memory.
     if (inputMemory.includes(userInput) === false) {
         inputMemory.push(userInput);
@@ -46,4 +49,4 @@ const getUserQuestion = () => {
         return alert(`You already asked me '${userInput}', my answer is still ${answerMemoryIndex} `)
     }
 }
-// returns a random answer as an alert to a user
+
